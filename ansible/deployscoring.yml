@@ -1,0 +1,6 @@
+---
+- hosts: scoring
+  roles:
+    - docker
+    - scoring
+  become: yes

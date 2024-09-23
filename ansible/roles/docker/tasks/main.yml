@@ -1,0 +1,41 @@
+---
+- name: Update Apt Repo and Upgrade Packages.
+  apt:
+    update_cache: true
+    upgrade: yes
+
+- name: Install Docker Pre-Reqs.
+  apt: 
+    name:
+      - ca-certificates
+      - curl
+    state: present
+
+- name: Ensure directory exists for /etc/apt/keyrings
+  file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: '0755'
+
+- name: Add Docker apt key.
+  ansible.builtin.get_url:
+    url: "https://download.docker.com/linux/debian/gpg"
+    dest: /etc/apt/keyrings/docker.asc
+    mode: '0644'
+    force: false
+
+- name: Add Docker repository.
+  apt_repository:
+    repo: "deb [signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian bookworm stable"
+    state: present
+    filename: "/etc/apt/sources.list.d/docker.list"
+    update_cache: true
+
+- name: Install Docker Packages.
+  apt:
+    name:
+      - docker-ce 
+      - docker-ce-cli 
+      - containerd.io 
+      - docker-buildx-plugin 
+      - docker-compose-plugin

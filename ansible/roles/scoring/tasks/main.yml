@@ -1,0 +1,29 @@
+---
+- name: Ensure Git is installed.
+  apt:
+    name: git
+    state: present
+
+- name: Clone the Scoring Engine Repository.
+  ansible.builtin.git:
+    repo: "https://github.com/compscore/compscore.git"
+    dest: /home/debian/compscore
+    update: false
+
+- name: Copy .env
+  ansible.builtin.copy:
+    src: ".env"
+    dest: "/home/debian/compscore/"
+    mode: "0644"
+
+- name: Copy config.yml
+  ansible.builtin.copy:
+    src: config.yml
+    dest: "/home/debian/compscore/"
+    mode: "0644"
+
+- name: Bring up Docker Compose
+  community.docker.docker_compose_v2:
+    project_src: /home/debian/compscore
+    pull: missing
+    state: present
