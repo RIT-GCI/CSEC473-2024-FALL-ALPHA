@@ -16,18 +16,18 @@ source $OPENSTACKENV
 
 
 #deploy VM 1
-openstack server create --wait --flavor windows --boot-from-volume 100 --image $WINDOWS --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.70 --nic net-id=$SSHJUMPNET --security-group $POINTS_SEC --availability-zone gcicompute07  windows-1
-openstack server create --wait --flavor windows --boot-from-volume 100 --image $WINDOWS --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.75 --nic net-id=$SSHJUMPNET --security-group $POINTS_SEC --availability-zone gcicompute07  windows-2
+openstack server create --flavor windows --boot-from-volume 25 --image $WINDOWS --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.70 --security-group $POINTS_SEC --availability-zone gcicompute08  roulette-1
+openstack server create --flavor windows --boot-from-volume 25 --image $WINDOWS --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.75 --security-group $POINTS_SEC --availability-zone gcicompute08  roulette-2
 #deploy VM 2
-openstack server create --wait --flavor $SIZE --boot-from-volume 100 --image $ROCKY --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.71 --nic net-id=$SSHJUMPNET --security-group $POINTS_SEC --availability-zone gcicompute02  rocky-1
-openstack server create --wait --flavor $SIZE --boot-from-volume 100 --image $ROCKY --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.76 --nic net-id=$SSHJUMPNET --security-group $POINTS_SEC --availability-zone gcicompute02  rocky-2
+openstack server create --flavor $SIZE --boot-from-volume 25 --image $ROCKY --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.71 --security-group $POINTS_SEC --availability-zone gcicompute02  blackjack-1
+openstack server create --flavor $SIZE --boot-from-volume 25 --image $ROCKY --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.76 --security-group $POINTS_SEC --availability-zone gcicompute02  blackjack-2
 #deploy VM 3
-openstack server create --wait --flavor $SIZE --boot-from-volume 100 --image $DEBIAN --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.72 --nic net-id=$SSHJUMPNET --security-group $POINTS_SEC --availability-zone gcicompute03  debian-1
-openstack server create --wait --flavor $SIZE --boot-from-volume 100 --image $DEBIAN --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.77 --nic net-id=$SSHJUMPNET --security-group $POINTS_SEC --availability-zone gcicompute03  debian-2
+openstack server create --flavor $SIZE --boot-from-volume 25 --image $DEBIAN --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.72 --security-group $POINTS_SEC --availability-zone gcicompute03  poker-1
+openstack server create --flavor $SIZE --boot-from-volume 25 --image $DEBIAN --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.77 --security-group $POINTS_SEC --availability-zone gcicompute03  poker-2
 #deploy VM 4
-openstack server create --wait --flavor $SIZE --boot-from-volume 100 --image $DEBIAN --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.73 --nic net-id=$SSHJUMPNET --security-group $POINTS_SEC --availability-zone gcicompute03  debian-3
-openstack server create --wait --flavor $SIZE --boot-from-volume 100 --image $DEBIAN --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.78 --nic net-id=$SSHJUMPNET --security-group $POINTS_SEC --availability-zone gcicompute03  debian-4
+openstack server create --flavor $SIZE --boot-from-volume 25 --image $DEBIAN --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.73 --security-group $POINTS_SEC --availability-zone gcicompute07  slots-1
+openstack server create --flavor $SIZE --boot-from-volume 25 --image $DEBIAN --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.78 --security-group $POINTS_SEC --availability-zone gcicompute07  slots-2
 #deploy VM 5
-openstack server create --wait --flavor $SIZE --boot-from-volume 100 --image $ROCKY --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.74 --nic net-id=$SSHJUMPNET --security-group $POINTS_SEC --availability-zone gcicompute03  rocky-3
-openstack server create --wait --flavor $SIZE --boot-from-volume 100 --image $ROCKY --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.79 --nic net-id=$SSHJUMPNET --security-group $POINTS_SEC --availability-zone gcicompute03  rocky-4
+openstack server create --flavor $SIZE --boot-from-volume 25 --image $ROCKY --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.74 --security-group $POINTS_SEC --availability-zone gcicompute05  baccarat-1
+openstack server create --flavor $SIZE --boot-from-volume 25 --image $ROCKY --key-name $GRAY_SSH --nic net-id=$POINTS_NIC,v4-fixed-ip=10.21.77.79 --security-group $POINTS_SEC --availability-zone gcicompute05  baccarat-2
 
