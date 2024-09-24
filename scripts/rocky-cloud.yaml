@@ -1,0 +1,15 @@
+#cloud-config
+users:
+  - name: pitboss           # Replace with your desired username
+    primary_group: pitboss   # Primary group of the user (automatically created)
+    groups: [wheel]          # Add user to the wheel group for sudo access
+    sudo: ALL=(ALL) NOPASSWD:ALL   # Give the user passwordless sudo privileges
+    ssh_authorized_keys:     # Optionally add SSH public key for passwordless login
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCRwq7uuGr7k2ToMEZi22t3Pcd4oDsX1CsLIV2HO6cGOZAg2+moT2eaBnPPRP+YtELt9dxblaVuEhQ3k09BVYW0PaIHX7NL0HeX/6j11JnUpera3bruG5GIwGUBBVwpYKEoIYae+6l8mtFbPx/58eZOh43X7wpocUiw/vYBxDbNvI7KZY5LNxu71BepkF07drnn/mYWp1YMWwITD/798IXzDZlztNjMqiM7pnun5yDAgUkyD9ke/GSsCbZpM1dKUJVwUx3WzSdDZhv8yvmgFC4h0ekMqVm1HJne3uVg/rPsJpTWvViqmdwPkZBRZ/m74pCguxNe1Z20RdMskqfkUNRurKFe0LpIBNRiIOrDpOGzpPhYxxQSWfyvOZRU506Kil4jahkCUk1UyxRivqHxlSGAIVRXOv+gwtYPY2plBTDyKxb8Au7kmnJbrbFJ9m8eFRGgExiI6WzeVsNGgkdbsq259yDXyghL6JRckqteuV9nJILgtyNLiEZwhCJ4WHwxK8M= debian@ansible-core
+chpasswd:
+  list: |
+    pitboss:PassWord!!!         # Replace with your desired password
+  expire: False              # Don't force password change on first login
+
+runcmd:
+  - echo 'User newuser created and added to wheel group'

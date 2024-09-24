@@ -1,6 +1,6 @@
 OPENSTACKENV=./cdt-alpha-openrc.sh
 PLAYER_SIZE=medium-large
-PLAYER_IMAGE=2fbcc4ce-f116-430b-aa8f-63c4bc7a88d4 
+PLAYER_IMAGE=c12d43a5-3125-413d-b988-c74697f0f6ac  
 PLAYER_SECGROUP=player-sec
 GRAY_SSH=pitboss
 SSHJUMPNET=e721ed5e-fefc-48d9-ad0f-7b9022a81b56

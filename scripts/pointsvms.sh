@@ -7,7 +7,7 @@ WINDOWS=WinSrv2019-2024.7
 
 POINTS_SEC=points-sec
 
-GRAY_SSH=pitboss
+GRAY_SSH=ansible
 SSHJUMPNET=e721ed5e-fefc-48d9-ad0f-7b9022a81b56
 POINTS_NIC=4536a602-cead-49fc-af1a-c8ff91c1646a
 
