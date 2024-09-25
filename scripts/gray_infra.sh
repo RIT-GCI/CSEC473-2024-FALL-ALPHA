@@ -25,10 +25,6 @@
 #SCOREVM_IMAGE Image chosen for scoring vm NOTE: Script assumes debian-based OS that uses APT
 #SCOREVM_NAME Name of VM 
 #SCOREVM_SECGROUP Name of security group to be created
-#BEATVM_SIZE "Flavor" of VM in OpenStack
-#BEATEVM_IMAGE Image chosen for scoring vm NOTE: Script assumes debian-based OS that uses APT
-#BEATVM_NAME Name of VM 
-#BEATVM_SECGROUP Name of security group to be created
 #GRAY_SSH The name of the SSH key that is imported in OpenStack
 #SSHJUMPNET OpenStack ID for SSHJumpNet on CyberRange OpenStack enviornment
 #GRAY_NIC OpenStack ID for the nic ex: 0026c949-8daa-4c7d-bed5-e40259eb9ce8
@@ -40,13 +36,10 @@ ANSIBLE_NAME=ansible_core
 ANSIBLE_SECGROUP=ansible-sec
 ANSIBLE_CLOUDINIT=./ansible-cloud.yaml
 SCOREVM_SIZE=large
-SCOREVM_IMAGE=DebianBookworm12
+SCOREVM_IMAGE=DebianBookworm12-Desktop
 SCOREVM_NAME=scoring
 SCOREVM_SECGROUP=scoring-sec
-BEATVM_SIZE=medium-large
-BEATVM_IMAGE=DebianBookworm12
-BEATVM_NAME=beat
-BEATVM_SECGROUP=scoring-sec
+
 GRAY_SSH=pitboss
 SSHJUMPNET=e721ed5e-fefc-48d9-ad0f-7b9022a81b56
 GRAY_NIC=0026c949-8daa-4c7d-bed5-e40259eb9ce8
